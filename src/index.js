@@ -8,9 +8,13 @@ fetch ('https://type.fit/api/quotes')
 .then(data=>{data.forEach(quoteObject => {
     const quoteList = document.getElementById('quote-list');
     const quoteEl = document.createElement('li');
-    quoteEl.innerText = quoteObject.text;
+    const spanAuthor = document.createElement('p');
+    quoteEl.innerText = `${quoteObject.text}`;
+    spanAuthor.innerText = `${quoteObject.author}`;
+    spanAuthor.className = 'quote-span';
+    quoteEl.appendChild(spanAuthor);
     quoteList.appendChild(quoteEl);
-    console.log(quoteObject.author)
+    console.log(quoteEl);
 })
 })
 }
