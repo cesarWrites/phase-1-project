@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function(){
-    fetchQuotes()
+    fetchQuotes();
+    generateRandomQuote()
 })
 
 const fetchQuotes = () =>{
@@ -19,8 +20,33 @@ fetch ('https://type.fit/api/quotes')
 })
 }
 
+//
 function generateRandomQuote(){
-    
+const quoteEl = document.getElementById('quote');
+const quoteAuthorEl = document.getElementById('author');
+
+document.getElementById('new-quote').addEventListener('click', function (e){
+    fetch('https://type.fit/api/quotes')
+    .then(response=>response.json())
+    .then (quotes => {
+    const randomQuoteIndex = Math.floor(Math.random() * quotes.length);
+    const quoteText = quotes[randomQuoteIndex].text;
+    let author = quotes[randomQuoteIndex].author;
+
+    if (!author) {
+        author = 'Unknown';
+    }
+
+    if (quoteText.length > 120) {
+        quoteEl.classList.add('long-quote');
+    } else {
+        quoteEl.classList.remove('long-quote');
+    }
+    quoteEl.textContent = quoteText;
+    quoteAuthorEl.textContent = author;
+});
+
+});
 }
 
 //const quotesPromise = fetchQuotes();
