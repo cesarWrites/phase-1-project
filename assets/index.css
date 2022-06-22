@@ -1,33 +1,4 @@
-.quote-span{
-    display: flex;
-    flex-direction: column;
-    font-size: 20px;
-    margin-left: 2%;
-    font-style: italic;
-    font-weight: bold;
-}
-#quote-list li{
-    list-style-type: none;
-}
-/*.content{
-    display: flex;
-    flex-direction: row;
-    padding-left: 5%;
-}
-.quote-container{
-    background: gray;
-    width: 50%;
-    height: 200px;
-    border-radius: 10%;
-}
 
-#quote-btn{
-    color: black;
-    width: 200px;
-    height: 100px;
-    margin-left: 5%;
-    margin-top:  5%;
-}*/
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Open+Sans:wght@400;600&display=swap');
 html{
@@ -53,12 +24,28 @@ body{
 .header-content{
     float: left;
     padding-left: 5%;
-    margin-top: 4%;
+    margin-top: 2%;
+    width: 100%;
+    position: relative;
 }
 header{
-    background-color: #333;
+    background-color: wheat;
     padding: 2% 2% 2% 10%;
     font-size: 20px;
+}
+.main-sect{
+    margin-top: 4%;
+}
+.quote-span{
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    margin-left: 2%;
+    font-style: italic;
+    font-weight: bold;
+}
+#quote-list li{
+    list-style-type: none;
 }
 .quote-container{
     width: auto;
@@ -67,14 +54,15 @@ header{
     padding: 20px 30px;
     background-color: rgba(238, 67, 124, 0.9);
     box-shadow: 0 10px 10px rgba(0,0,0,0.9);
-    margin-top: 50%;
-    margin-right: 5%;
+    margin-top: 10%;
+    margin-right: 25%;
+    margin-bottom: 5%;
 }
 .quote-text{
     font-size: 2.75rem;
 }
 .long-quote{
-    font-size: 4rem;
+    font-size: 2rem;
 }
 .fa-quote-left{
     font-size: 4rem;
