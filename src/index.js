@@ -1,8 +1,12 @@
 document.addEventListener('DOMContentLoaded', function(){
     fetchQuotes();
     generateRandomQuote()
+    tweetQuote();
+    addQuoteSelectListener();
+    addQuote(quote)
 })
 
+//use fetch requst to get all the quotes
 const fetchQuotes = () =>{
 fetch ('https://type.fit/api/quotes')
 .then(res=>res.json())
@@ -15,23 +19,22 @@ fetch ('https://type.fit/api/quotes')
     spanAuthor.className = 'quote-span';
     quoteEl.appendChild(spanAuthor);
     quoteList.appendChild(quoteEl);
-    console.log(quoteEl);
 })
 })
 }
 
-//
+//generate a random quote on click of a button
 function generateRandomQuote(){
-const quoteEl = document.getElementById('quote');
-const quoteAuthorEl = document.getElementById('author');
+quoteEl = document.getElementById('quote');
+quoteAuthorEl = document.getElementById('author');
 
 document.getElementById('new-quote').addEventListener('click', function (e){
     fetch('https://type.fit/api/quotes')
     .then(response=>response.json())
-    .then (quotes => {
-    const randomQuoteIndex = Math.floor(Math.random() * quotes.length);
-    const quoteText = quotes[randomQuoteIndex].text;
-    let author = quotes[randomQuoteIndex].author;
+    .then (data => {
+    const randomQuoteIndex = Math.floor(Math.random() * data.length);
+    const quoteText = data[randomQuoteIndex].text;
+    let author = data[randomQuoteIndex].author;
 
     if (!author) {
         author = 'Unknown';
@@ -49,34 +52,40 @@ document.getElementById('new-quote').addEventListener('click', function (e){
 });
 }
 
-//const quotesPromise = fetchQuotes();
-const quoteEl = document.getElementById('quote');
-const quoteAuthorEl = document.getElementById('author');
+function tweetQuote() {
+    document.getElementById('twitter').addEventListener('click', function(){
+        const twitterQuoteUrl = `https://twitter.com/intent/tweet?text=${quoteEl.textContent} - ${quoteAuthorEl.textContent}`;
+        window.open(twitterQuoteUrl, '_blank');
+    });
+}
+// Use dropdown to select quotes from authors beginning with specific letters
+function startsWith(letter){
 
-document.getElementById('new-quote').addEventListener('click', function (e){
+}
+function selectBreedsStartingWith(letter) {
     fetch('https://type.fit/api/quotes')
-    .then(response=>response.json())
-    .then (quotes => {
-    const randomQuoteIndex = Math.floor(Math.random() * quotes.length);
-    const quoteText = quotes[randomQuoteIndex].text;
-    let author = quotes[randomQuoteIndex].author;
-
-    if (!author) {
-        author = 'Unknown';
-    }
-
-    if (quoteText.length > 120) {
-        quoteEl.classList.add('long-quote');
-    } else {
-        quoteEl.classList.remove('long-quote');
-    }
-    quoteEl.textContent = quoteText;
-    quoteAuthorEl.textContent = author;
+    .then(newresponse=>newresponse.json())
+    .then(quotes=>{
+   // quotes.filter(quote => quote.author(letter))
+    console.log(quotes.text);
 });
-
-});
-
-
+  }
+  
+  function addQuoteSelectListener() {
+    let quoteDropdown = document.querySelector('#quote-dropdown');
+    quoteDropdown.addEventListener('change', function (event) {
+      selectBreedsStartingWith(event.target.value);
+    });
+  }
+  
+  function addQuote(quote) {
+    let ul = document.querySelector('#quote-detail');
+    let li = document.createElement('li');
+    li.innerText = quote;
+    li.style.cursor = 'pointer';
+    ul.appendChild(li);
+  }
+  
 
 
 
