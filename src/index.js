@@ -85,6 +85,28 @@ function selectBreedsStartingWith(letter) {
     li.style.cursor = 'pointer';
     ul.appendChild(li);
   }
+
+
+  function createNewQuotes(){
+    document.getElementById('quote-form').addEventListener('submit', function(){
+        const url = "";
+    const inputAuthor = document.getElementById('quote-text');
+    const inputQuote = document.getElementById('quote-author');
+    const post = {inputQuote, inputAuthor}
+    const configurationObject =   {
+        method: 'POST', 
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(post),
+      }
+      fetch(url, configurationObject)
+      .then(res=>res.json())
+      .then(results=>
+        console.log("successful addition"))
+})
+  }
   
 
 
