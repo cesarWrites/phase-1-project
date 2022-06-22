@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function(){
     tweetQuote();
     addQuoteSelectListener();
     addQuote(quote)
+    createNewQuotes()
 })
 
 //use fetch requst to get all the quotes
@@ -88,10 +89,11 @@ function selectBreedsStartingWith(letter) {
 
 
   function createNewQuotes(){
-    document.getElementById('quote-form').addEventListener('submit', function(){
-        const url = "";
-    const inputAuthor = document.getElementById('quote-text');
-    const inputQuote = document.getElementById('quote-author');
+    document.getElementById('quote-form').addEventListener('submit', function(e){
+        e.preventDefault();
+        const url = "http://localhost:3000/quotes";
+    const inputAuthor = document.getElementById('quote-text').value;
+    const inputQuote = document.getElementById('quote-author').value;
     const post = {inputQuote, inputAuthor}
     const configurationObject =   {
         method: 'POST', 
@@ -105,9 +107,7 @@ function selectBreedsStartingWith(letter) {
       .then(res=>res.json())
       .then(results=>
         console.log("successful addition"))
+        e.target.reset()
 })
   }
   
-
-
-
