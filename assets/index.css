@@ -20,6 +20,7 @@ body{
 .container{
     display: flex;
     flex-direction: row;
+    background-color: gainsboro;
 }
 .header-content{
     float: left;
@@ -29,7 +30,6 @@ body{
     position: relative;
 }
 header{
-    background-color: wheat;
     padding: 2% 2% 2% 10%;
     font-size: 20px;
 }
@@ -108,6 +108,24 @@ button{
     }
     .fa-twitter {
         font-size: 1.3rem;
+    }
+    #quote-form{
+        background-color: white;
+        font-size: 600;
+        border-radius: 5%;
+        width: auto;
+        padding: 2%;
+    }
+
+    #delete-form{
+        background-color: white;
+        font-size: 600;
+        border-radius: 5%;
+    }
+    input{
+        width: 75%;
+        margin: 2%;
+        padding: 2%;
     }
 
     @media screen and (max-width: 1000px) {
