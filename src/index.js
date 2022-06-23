@@ -5,6 +5,9 @@ document.addEventListener('DOMContentLoaded', function(){
     addQuoteSelectListener();
     addQuote(quote)
     createNewQuotes()
+    viewQuotes();
+    makePatchRequest();
+    deleteQuote();
 })
 
 //use fetch requst to get all the quotes
@@ -92,8 +95,8 @@ function selectBreedsStartingWith(letter) {
     document.getElementById('quote-form').addEventListener('submit', function(e){
         e.preventDefault();
         const url = "http://localhost:3000/quotes";
-    const inputAuthor = document.getElementById('quote-text').value;
-    const inputQuote = document.getElementById('quote-author').value;
+    const inputQuote = document.getElementById('quote-text').value;
+    const inputAuthor = document.getElementById('quote-author').value;
     const post = {inputQuote, inputAuthor}
     const configurationObject =   {
         method: 'POST', 
@@ -110,4 +113,41 @@ function selectBreedsStartingWith(letter) {
         e.target.reset()
 })
   }
-  
+
+  function viewQuotes(){
+    document.getElementById('btn').addEventListener('click', function(e){
+        fetch('http://localhost:3000/quotes')
+        .then(quoteres=>quoteres.json())
+        .then(newResult =>newResult.forEach(quotesObj=>{
+            document.getElementById('').innerText = quotesObj.inputQuote;
+            document.getElementById('').innerText = quotesObj.inputAuthor;
+            console.log(quotesObj.inputQuote)
+    })
+        )
+        })
+    }
+
+function deleteQuote(){
+document.getElementById('delete-form').addEventListener('submit', function(){
+    const id = document.getElementById('id').value;
+    fetch('http://localhost:3000/quotes/' + id, {
+      method: 'DELETE',
+    })
+    .then(res => res.json()) // or res.json()
+    .then(res => console.log(res))
+})
+    }
+
+function makePatchRequest(){
+  fetch('http://localhost:3000/quotes/2', {
+  method: 'PATCH',
+  body: JSON.stringify({
+    inputAuthor: 'Lionel Da Vinci',
+  }),
+  headers: {
+    'Content-type': 'application/json; charset=UTF-8',
+  },
+})
+  .then((response) => response.json())
+  .then((result) => console.log(result.inputAuthor));
+}
