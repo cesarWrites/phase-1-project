@@ -14,8 +14,9 @@
         <section class="header-content">
             <header>
                 <nav>
-                    <a href="">New quote</a>
+                    <a href="#new-quote">New quote</a>
                     <a href="">Connect</a>
+                    <a href="#btn"> My Quotes</a>
                 </nav>
                 <h1>Everyday<span style="color:yellowgreen; margin-left:10px;">Quotes</span></h1>
                 <p>A little motivation goes a long way.</p>
@@ -41,14 +42,23 @@
                 </div>
             </header>
             <form id="quote-form">
-                <label for="quote-text" name=" quote-text">
+                <label for="quote-text" name=" quote-text">Quote: </label>
                     <input type="text" name="quote text" placeholder="quote" id="quote-text">
-                </label><br>
-                <label for="quote-author" name="quote-author">
-                    <input type="text" name="quote author" placeholder="author" id="quote-author">
-                </label><br>
+              <br>
+                <label for="quote-author" name="quote-author">Author: </label>
+                    <input type="text" name="quote author" placeholder="author" id="quote-author"><br>
                 <input type="submit" value="Submit">
             </form>
+
+            <form id="delete-form">
+                <input id="id" name="delete-quote" placeholder="delete quote">
+                <input type="submit" value ="delete">
+            </form>
+            <div id="my-quotes">
+                <ul id="new-quotes">
+                    <button id ="btn">My Quotes</button>
+                </ul>
+            </div>
         </section>
         <section class="main-sect">
         <div class="quote-info">
