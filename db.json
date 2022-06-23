@@ -19,6 +19,36 @@
       "inputQuote": "Everyday is na oportunity to learn. ",
       "inputAuthor": "Sarah Mukuti",
       "id": 4
+    },
+    {
+      "inputQuote": "Make hay while the sun shines.",
+      "inputAuthor": "African proverb",
+      "id": 5
+    },
+    {
+      "inputQuote": "Everyday is na oportunity to learn. ",
+      "inputAuthor": "Mauricio Arturo",
+      "id": 6
+    },
+    {
+      "inputQuote": "Your time is limited, so don't waste it living someone else's life. Don't be trapped by dogma – which is living with the results of other people's thinking",
+      "inputAuthor": "Steve Jobs",
+      "id": 7
+    },
+    {
+      "inputQuote": "f life were predictable it would cease to be life, and be without flavor.",
+      "inputAuthor": "Eleanor Roosevelt",
+      "id": 8
+    },
+    {
+      "inputQuote": "If you look at what you have in life, you'll always have more. If you look at what you don't have in life, you'll never have enough.",
+      "inputAuthor": "Oprah Winfrey",
+      "id": 9
+    },
+    {
+      "inputQuote": "If you set your goals ridiculously high and it's a failure, you will fail above everyone else's success. ",
+      "inputAuthor": "David Cameroon",
+      "id": 10
     }
   ]
 }
