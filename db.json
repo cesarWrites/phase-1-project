@@ -1,5 +1,24 @@
 {
-    "quotes": [
-
-    ]
+  "quotes": [
+    {
+      "inputQuote": "your limitation lies in your thoughts so does teh possibility to win.",
+      "inputAuthor": "Mark Antero",
+      "id": 1
+    },
+    {
+      "inputQuote": "your limitation lies in your thoughts so does teh possibility to win.",
+      "inputAuthor": "Lionel Da Vinci",
+      "id": 2
+    },
+    {
+      "inputQuote": "we cannot all be leades, when you get the opportunity give your best. ",
+      "inputAuthor": "Gioovanni Galileo",
+      "id": 3
+    },
+    {
+      "inputQuote": "Everyday is na oportunity to learn. ",
+      "inputAuthor": "Sarah Mukuti",
+      "id": 4
+    }
+  ]
 }
