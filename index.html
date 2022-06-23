@@ -16,7 +16,7 @@
                 <nav>
                     <a href="#new-quote">New quote</a>
                     <a href="">Connect</a>
-                    <a href="#btn"> My Quotes</a>
+                    <a href="#my-quotes-info" id="display-quotes"> My Quotes</a>
                 </nav>
                 <h1>Everyday<span style="color:yellowgreen; margin-left:10px;">Quotes</span></h1>
                 <p>A little motivation goes a long way.</p>
@@ -41,6 +41,7 @@
                     </div>
                 </div>
             </header>
+            <h1>Create Personal Quotes Collection</h1>
             <form id="quote-form">
                 <label for="quote-text" name=" quote-text">Quote: </label>
                     <input type="text" name="quote text" placeholder="quote" id="quote-text">
@@ -51,6 +52,7 @@
             </form>
 
             <form id="delete-form">
+                <label for="delete-quote" name="delete-quote">Delete: </label>
                 <input id="id" name="delete-quote" placeholder="delete quote">
                 <input type="submit" value ="delete">
             </form>
@@ -61,6 +63,9 @@
             </div>
         </section>
         <section class="main-sect">
+            <div id="my-quotes-info">
+                <ul id="quote-text"></ul>
+            </div>
         <div class="quote-info">
             <label for="select-quote">Filter authors who start with:</label>
     <select id="quote-dropdown" name="select-quote">
@@ -71,7 +76,6 @@
     </select>
 
     <ul id="quote-detail">
-
     </ul>
             <ul id="quote-list"></ul>
         </div>
