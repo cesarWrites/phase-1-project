@@ -21,7 +21,7 @@ A web browser
 Json server
 Node js
 ## Live Link
-
+<p>https://cesarwrites.github.io/phase-1-project/</p>
 
 ### Installation process
 clone the repository into your local machine.
