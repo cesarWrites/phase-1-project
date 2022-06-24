@@ -2,7 +2,6 @@ document.addEventListener('DOMContentLoaded', function(){
     fetchQuotes();
     generateRandomQuote()
     tweetQuote();
-    addQuoteSelectListener();
     addQuote(quote)
     createNewQuotes()
     viewQuotes();
@@ -63,33 +62,6 @@ function tweetQuote() {
     });
 }
 // Use dropdown to select quotes from authors beginning with specific letters
-function startsWith(letter){
-
-}
-function selectBreedsStartingWith(letter) {
-    fetch('https://type.fit/api/quotes')
-    .then(newresponse=>newresponse.json())
-    .then(quotes=>{
-   // quotes.filter(quote => quote.author(letter))
-    console.log(quotes.text);
-});
-  }
-  
-  function addQuoteSelectListener() {
-    let quoteDropdown = document.querySelector('#quote-dropdown');
-    quoteDropdown.addEventListener('change', function (event) {
-      selectBreedsStartingWith(event.target.value);
-    });
-  }
-  
-  function addQuote(quote) {
-    let ul = document.querySelector('#quote-detail');
-    let li = document.createElement('li');
-    li.innerText = quote;
-    li.style.cursor = 'pointer';
-    ul.appendChild(li);
-  }
-
 
   function createNewQuotes(){
     document.getElementById('quote-form').addEventListener('submit', function(e){
